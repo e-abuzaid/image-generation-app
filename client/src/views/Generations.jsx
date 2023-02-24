@@ -23,7 +23,7 @@ const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, 
     setVariationList([])
     setIsVariation(false)
     try {
-      const response = await fetch('http://localhost:5000', {
+      const response = await fetch('https://image-generation-app.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

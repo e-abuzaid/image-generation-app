@@ -76,7 +76,7 @@ const Variarions = ({formData, setFormData, isLoading, setIsLoading, setImage, i
         const validationForm = new FormData()
         validationForm.append('photo', formData.file)
         validationForm.append('number', formData.number)
-        const response = await fetch('http://localhost:5000/variation', {
+        const response = await fetch('https://image-generation-app.onrender.com/variation', {
           method: 'POST',
           body: validationForm
         })
