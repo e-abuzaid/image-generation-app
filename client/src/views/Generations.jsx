@@ -52,7 +52,7 @@ const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, 
         required
         onChange={(e) => setFormData({...formData, prompt: e.target.value})}
         placeholder={text}
-        className="w-full text-xl p-3 mb-4 text-[#ebedee]"
+        className="w-full md:text-xl text-md p-3 mb-4 text-[#ebedee]"
       />
       <label htmlFor="size">Choose preferred size...</label>
       <select

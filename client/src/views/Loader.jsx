@@ -3,7 +3,7 @@ import {RotatingSquare} from 'react-loader-spinner'
 
 const Loader = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full">
+    <div className="flex flex-col items-center md:justify-center h-full">
         <RotatingSquare
         height="100"
         width="100"

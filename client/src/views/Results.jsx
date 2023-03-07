@@ -60,9 +60,8 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
   }
   }, [index]);
 
-
   return (
-    <div className="p-6 flex flex-col items-center h-[100vh]">
+    <div className="md:p-6 p-2 flex flex-col items-center h-[100vh]">
         <h1 className="font-extrabold mb-8">Results</h1>
         {isLoading && <Loader /> }
         {!isImage && !isLoading && !isVariation &&
@@ -85,7 +84,7 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
           <a
             href={image.image}
             download
-            className="relative border-solid border-2 border-[#787878] bottom-20 left-5 flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
+            className="relative border-solid border-2 border-[#787878] md:bottom-20 md:left-5 bottom-5 left-[220px] flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
           > Save <BsDownload /></a>
         </div>
         }
@@ -114,7 +113,7 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
           <a
             href={variationList[index].url}
             download
-            className="relative border-solid border-2 border-[#787878] bottom-[100px] left-20 flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
+            className="relative border-solid border-2 border-[#787878] md:bottom-[100px] md:left-20 bottom-5 left-[220px] flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
           > Save <BsDownload /></a>
         </div>
         <div className="grid grid-cols-5  w-[100%] gap-4">

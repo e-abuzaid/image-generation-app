@@ -119,7 +119,7 @@ const Variarions = ({formData, setFormData, isLoading, setIsLoading, setImage, i
           <label htmlFor="number" className="mt-3">Number of variations...</label>
           <input
              id="number"
-             className="w-full text-2xl text-[#ebedee] mb-4 mt-3"
+             className="w-full md:text-2xl text-md text-[#ebedee] mb-4 mt-3"
              required
              type="number"
              min="1"

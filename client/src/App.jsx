@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="flex w-full md:flex-row flex-col">
-      <div className="md:w-1/3 w-full flex flex-col p-6">
+      <div className="md:w-1/3 w-full flex flex-col md:p-6 p-2">
         <h1 className="font-extrabold mb-3">Image Generation App</h1>
         <h2 className="font-bold text-xl mb-3 ">Build the perfect image by just inputting a simple prompt!</h2>
         <div className="flex mb-5">
