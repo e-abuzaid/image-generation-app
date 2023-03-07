@@ -16,7 +16,7 @@ const Variarions = ({formData, setFormData, isLoading, setIsLoading, setImage, i
         aspect: 1,
         width: 256,
         height: 256,
-        // locked: true,
+        locked: true,
      })
      const [previewUrl, setPreviewUrl] = useState(null)
      const [isCrop, setIsCrop] = useState(false)
@@ -45,15 +45,17 @@ const Variarions = ({formData, setFormData, isLoading, setIsLoading, setImage, i
     const handleSave = (event) => {
         const canvas = document.createElement('canvas');
         const image = document.querySelector('#preview');
+        const scaleX = image.naturalWidth / image.width
+        const scaleY = image.naturalHeight / image.height
         canvas.width = crop.width;
         canvas.height = crop.height;
         const ctx = canvas.getContext('2d');
         ctx.drawImage(
           image,
-          crop.x,
-          crop.y,
-          crop.width,
-          crop.height,
+          crop.x * scaleX,
+          crop.y * scaleY,
+          crop.width * scaleX,
+          crop.height * scaleY,
           0,
           0,
           crop.width,
