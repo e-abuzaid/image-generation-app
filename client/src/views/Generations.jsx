@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, setIsImage, isVariation, setIsVariation, setVariationList}) => {
+const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, setIsImage, isVariation, setError, setIsVariation, setVariationList}) => {
   const [text, setText] = useState("")
   const [fullText, setFullText] = useState(
     "e.g.: A boy playing with a ball..."
@@ -22,6 +22,7 @@ const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, 
     setImage('')
     setVariationList([])
     setIsVariation(false)
+    setIsImage(false)
     try {
       const response = await fetch('https://image-generation-app.onrender.com', {
         method: 'POST',
@@ -37,6 +38,7 @@ const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, 
       setImage(image)
       setIsImage(true)
     } catch (error) {
+      setError(true)
       console.log(error)
     }
     setIsLoading(false)

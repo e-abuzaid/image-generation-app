@@ -18,6 +18,7 @@ function App() {
   const [isVariation, setIsVariation] = useState(false)
   const [variationList, setVariationList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   return (
     <div className="flex w-full md:flex-row flex-col">
@@ -40,6 +41,7 @@ function App() {
             isVariation={isVariation}
             setIsVariation={setIsVariation}
             setVariationList={setVariationList}
+            setError={setError}
           />
         )
         }  {type === 'variation' && (
@@ -57,6 +59,7 @@ function App() {
         )
         }
       </div>
+      <hr className="md:hidden my-5" />
       <div className="md:w-2/3 w-full">
         <Results
           image={image}
@@ -65,6 +68,7 @@ function App() {
           variationList={variationList}
           isLoading={isLoading}
           isVariation={isVariation}
+          error={error}
         />
       </div>
     </div>

@@ -72,6 +72,11 @@ label, h2 {
   transform: translateX(100%);
 }
 
+.image-result:hover .save-button {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
 
 .slit-in-vertical {
 	-webkit-animation: slit-in-vertical 0.45s ease-out both;
@@ -108,5 +113,22 @@ label, h2 {
   100% {
     -webkit-transform: translateZ(0) rotateY(0);
             transform: translateZ(0) rotateY(0);
+  }
+}
+
+ @-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

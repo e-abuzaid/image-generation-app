@@ -74,6 +74,7 @@ const Variarions = ({formData, setFormData, isLoading, setIsLoading, setImage, i
       setImage('')
       setVariationList([])
       setIsImage(false)
+      setIsVariation(false)
       try {
         const validationForm = new FormData()
         validationForm.append('photo', formData.file)

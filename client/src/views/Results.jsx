@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import {useSwipeable} from 'react-swipeable'
+import FileSaver from 'file-saver'
 import {BsDownload} from 'react-icons/bs'
 import {MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowLeft} from 'react-icons/md'
 
 import Placeholder from '../assets/placeholder.jpg'
 import Loader from "./Loader"
 
-const Results = ({isImage, isVariation, type, variationList, image, isLoading}) => {
+const Results = ({isImage, isVariation, type, variationList, image, isLoading, error}) => {
   const [index, setIndex] = useState(0)
-
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       if (index > 0) {
@@ -70,7 +70,7 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
             <img
               src={Placeholder}
               width="80%"
-              className="m-auto"
+              className="mx-auto md:w-[80%] w-[100%] image-result"
               alt="placeholder"
             />
           </div>
@@ -78,14 +78,15 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
         {isImage &&
         <div>
           <img
+            className="image-result"
             width="100%"
             src={image.image}
           />
           <a
             href={image.image}
             download
-            className="relative border-solid border-2 border-[#787878] md:bottom-20 md:left-5 bottom-5 left-[220px] flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
-          > Save <BsDownload /></a>
+            className="save-button relative border-solid border-2 border-[#787878] md:bottom-20 md:left-5 bottom-5 left-[220px] flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
+          > <BsDownload /></a>
         </div>
         }
     {isVariation &&
@@ -93,7 +94,7 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
         <div>
           <img
             src={variationList[index].url}
-            className="mx-auto md:w-[80%] w-[100%]"
+            className="mx-auto md:w-[80%] w-[100%] image-result"
             id="generated-image"
           />
           <div className="w-[75%] flex justify-between relative bottom-[300px] left-[95px]">
@@ -113,8 +114,8 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
           <a
             href={variationList[index].url}
             download
-            className="relative border-solid border-2 border-[#787878] md:bottom-[100px] md:left-20 bottom-5 left-[220px] flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
-          > Save <BsDownload /></a>
+            className="save-button relative border-solid border-2 border-[#787878] md:bottom-[100px] md:left-20 bottom-5 left-[220px] flex items-center justify-evenly w-[60px] h-[60px] rounded-full bg-[#ebedee] font-bold"
+          > <BsDownload /></a>
         </div>
         <div className="grid grid-cols-5  w-[100%] gap-4">
           {variationList.map((image) => (
@@ -130,6 +131,9 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading}) 
           ))}
         </div>
       </div>
+    }
+    {error &&
+      <h1>There was an error generating a result, please try again</h1>
     }
   </div>
 )
