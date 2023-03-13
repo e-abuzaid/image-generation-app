@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, setIsImage, isVariation, setError, setIsVariation, setVariationList}) => {
   const [text, setText] = useState("")
   const [fullText, setFullText] = useState(
-    "e.g.: A boy playing with a ball..."
+    "e.g.: Mickey Mouse as woody from toy story"
   )
   const [index, setIndex] = useState(0)
 

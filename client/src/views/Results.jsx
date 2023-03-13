@@ -4,7 +4,7 @@ import FileSaver from 'file-saver'
 import {BsDownload} from 'react-icons/bs'
 import {MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowLeft} from 'react-icons/md'
 
-import Placeholder from '../assets/placeholder.jpg'
+import Placeholder from '../assets/placeholder.png'
 import Loader from "./Loader"
 
 const Results = ({isImage, isVariation, type, variationList, image, isLoading, error}) => {
@@ -66,11 +66,11 @@ const Results = ({isImage, isVariation, type, variationList, image, isLoading, e
         {isLoading && <Loader /> }
         {!isImage && !isLoading && !isVariation &&
           <div>
-            <h2>Your results will show here</h2>
+            <h2 className="text-lg font-bold mb-2">Your results will show here</h2>
             <img
               src={Placeholder}
-              width="80%"
-              className="mx-auto md:w-[80%] w-[100%] image-result"
+              width="100%"
+              className="mx-auto w-[100%]"
               alt="placeholder"
             />
           </div>
