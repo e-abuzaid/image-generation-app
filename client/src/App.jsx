@@ -9,7 +9,7 @@ function App() {
   const [type, setType] = useState('generation')
   const [formData, setFormData] = useState({
     prompt: '',
-    size: '',
+    size: '256x256',
     file: '',
     number: ''
   })
