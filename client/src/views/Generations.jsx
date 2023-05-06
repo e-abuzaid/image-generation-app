@@ -73,4 +73,3 @@ const Generations = ({formData, setFormData, isLoading, setIsLoading, setImage, 
 }
 
 export default Generations
-Footer
